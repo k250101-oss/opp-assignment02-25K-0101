@@ -42,7 +42,7 @@ The Vehicle Listing module serves as the primary data aggregator for the applica
 
 ### 📸 Execution Screenshot
 
-![App Screenshot](./images/1.png)
+<img width="1145" height="873" alt="1" src="https://github.com/user-attachments/assets/fc773b37-aea0-4473-bf6e-f94e699ac7c0" />
 
 ### 💻 Code Implementation
 
@@ -131,7 +131,7 @@ The Car Ads section specifically handles premium mid-to-large-scale luxury vehic
 
 ### 📸 Execution Screenshot
 
-_Place your "Car Ads" module execution screenshot right here._
+<img width="985" height="700" alt="2" src="https://github.com/user-attachments/assets/9a170074-2203-4420-a660-974256487a34" />
 
 ### 💻 Code Implementation
 ```cpp
@@ -170,7 +170,7 @@ The Hatchback Ads component covers economic and compact urban vehicles. It track
 
 ### 📸 Execution Screenshot
 
-_Place your "Hatchback Ads" module execution screenshot right here._
+<img width="1063" height="408" alt="3" src="https://github.com/user-attachments/assets/1f4316ae-90cd-4003-b315-8b5e49b36c71" />
 
 ### 💻 Code Implementation
 
@@ -208,7 +208,7 @@ The Bike Ads section processes two-wheeler options. It isolates unique attribute
 
 ### 📸 Execution Screenshot
 
-_Place your "Bike Ads" module execution screenshot right here._
+<img width="656" height="712" alt="4" src="https://github.com/user-attachments/assets/f137b2a7-b91a-45b7-afc8-3d21dec9635f" />
 
 ### 💻 Code Implementation
 
@@ -246,7 +246,7 @@ The Buyer Accounts module holds client profile logs, liquid wallet cash balances
 
 ### 📸 Execution Screenshot
 
-_Place your "Buyer Accounts" module execution screenshot right here._
+<img width="1009" height="837" alt="5" src="https://github.com/user-attachments/assets/76e320a9-bee0-4701-9a36-c4f10d5e312b" />
 
 ### 💻 Code Implementation
 
@@ -293,7 +293,7 @@ The Seller Accounts structure manages vendor data tiers (Individual or Dealer) a
 
 ### 📸 Execution Screenshot
 
-_Place your "Seller Accounts" module execution screenshot right here._
+<img width="1060" height="820" alt="6" src="https://github.com/user-attachments/assets/bbc62a32-2f3d-4d1a-9f2c-5f0e1714b42a" />
 
 ### 💻 Code Implementation
 
@@ -330,9 +330,6 @@ public:
 
 The Admin class provides complete administrative control over marketplace inventory. It uses **Friend Class** permissions to directly modify an advertisement's protected lifecycle state variables for platform approvals or safety guidelines removals.
 
-### 📸 Execution Screenshot
-
-_Place your "Admin Compliance Controls" module execution screenshot right here._
 
 ### 💻 Code Implementation
 ```cpp
@@ -365,7 +362,7 @@ This search engine function queries the live database array by manufacturer bran
 
 ### 📸 Execution Screenshot
 
-_Place your "Filter by Brand" module execution screenshot right here._
+<img width="231" height="220" alt="7" src="https://github.com/user-attachments/assets/87a022f5-7e01-489d-b8b7-25861059572c" />
 
 ### 💻 Code Implementation
 ```cpp
@@ -392,7 +389,7 @@ This distinct feature isolates listings based on their structural service upkeep
 
 ### 📸 Execution Screenshot
 
-_Place your "Filter by Maintenance Records" module execution screenshot right here._
+<img width="236" height="499" alt="8" src="https://github.com/user-attachments/assets/0926429f-9ad6-43f6-9325-b02304d9db3a" />
 
 ### 💻 Code Implementation
 ```cpp
@@ -428,7 +425,7 @@ This transactional feature parses the active marketplace data array and displays
 
 ### 📸 Execution Screenshot
 
-_Place your "View Reserved Bookings" module execution screenshot right here._
+<img width="1022" height="394" alt="9" src="https://github.com/user-attachments/assets/ade6fb2c-5798-4e48-8d5e-0adb29dfaee8" />
 
 ### 💻 Code Implementation
 ```cpp
@@ -454,10 +451,6 @@ void showAllReservedBookings() const {
 ------------------------------------
 
 This system handles platform metrics compilation and financial auditing. By utilizing **Operator Overloading** (<, ==, and +), the engine evaluates asset prices and aggregates system-wide transaction metrics without complex helper function pipelines.
-
-### 📸 Execution Screenshot
-
-_Place your "Compare Listings & App Statistics" module execution screenshot right here._
 
 ### 💻 Code Implementation
 ```cpp
