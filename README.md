@@ -46,9 +46,84 @@ _Place your "Vehicle Listing" module execution screenshot right here._
 
 ### 💻 Code Implementation
 
-C++
+```cpp
+class AdListing : public Printable {
+private:
+    static int systemTotalActiveAdsCount;
+    static const double flatPortalServiceFee;
+    
+    string adID;
+    Vehicle* sampleVehiclePtr;
+    long long finalPrice;
+    string listingStatus; // "Pending", "Active", "Reserved", "Sold"
+    string sellerProfileID;
+    
+    // Feature 2: Booking properties variables
+    bool reservationTokenPaid;
+    long long securityTokenAmountHeld;
+    string reservingBuyerID;
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   class AdListing : public Printable {  private:      static int systemTotalActiveAdsCount;      static const double flatPortalServiceFee;      string adID;      Vehicle* sampleVehiclePtr;      long long finalPrice;      string listingStatus; // "Pending", "Active", "Reserved", "Sold"      string sellerProfileID;      // Feature 2: Booking properties variables      bool reservationTokenPaid;      long long securityTokenAmountHeld;      string reservingBuyerID;      friend class PlatformAdmin;  public:      AdListing(string id, Vehicle* vPtr, long long price, string sID) {          adID = id;          sampleVehiclePtr = vPtr;          finalPrice = price;          sellerProfileID = sID;          listingStatus = "Pending";          reservationTokenPaid = false;          securityTokenAmountHeld = 0;          reservingBuyerID = "None";          systemTotalActiveAdsCount++;      }      ~AdListing() {          systemTotalActiveAdsCount--;      }      string getAdID() const { return adID; }      long long getPrice() const { return finalPrice; }      Vehicle* getVehicle() const { return sampleVehiclePtr; }      string getStatus() const { return listingStatus; }      string getSellerID() const { return sellerProfileID; }      bool isTokenPaid() const { return reservationTokenPaid; }      long long getTokenAmount() const { return securityTokenAmountHeld; }      string getReservingBuyer() const { return reservingBuyerID; }      // Feature 2: Process simple cash reserve placement      void applyTokenReservation(string buyerID, long long depositAmount) {          if (listingStatus != "Active") {              cout << " -> Error: Listing " << adID << " is not actively available for booking.\n";              return;          }          reservingBuyerID = buyerID;          securityTokenAmountHeld = depositAmount;          reservationTokenPaid = true;          listingStatus = "Reserved";           cout << " -> [TOKEN REGISTERED] Ad " << adID << " successfully RESERVED by Buyer " << buyerID                << " with deposit payment of PKR " << depositAmount << "\n";      }      void printDetails() const override {          cout << "========================================================================\n";          cout << "MARKETPLACE LISTING ENTRY REFERENCE ID: " << adID << "\n";          cout << " -> Overall Asking Price : PKR " << finalPrice << "\n";          cout << " -> System Live Status   : [" << listingStatus << "]\n";          cout << " -> Listed By Seller ID  : " << sellerProfileID << "\n";          if (reservationTokenPaid) {              cout << " -> Booking Guard Details: Reserved By: " << reservingBuyerID << " | Token Held: PKR " << securityTokenAmountHeld << "\n";          }          cout << "------------------------------------------------------------------------\n";          if (sampleVehiclePtr != nullptr) {              sampleVehiclePtr->printDetails();          } else {              cout << " -> Error: No vehicle asset bound to this listing index node.\n";          }      }  };   `
+    friend class PlatformAdmin;
+public:
+    AdListing(string id, Vehicle* vPtr, long long price, string sID) {
+        adID = id;
+        sampleVehiclePtr = vPtr;
+        finalPrice = price;
+        sellerProfileID = sID;
+        listingStatus = "Pending";
+        
+        reservationTokenPaid = false;
+        securityTokenAmountHeld = 0;
+        reservingBuyerID = "None";
+        
+        systemTotalActiveAdsCount++;
+    }
+
+    ~AdListing() {
+        systemTotalActiveAdsCount--;
+    }
+
+    string getAdID() const { return adID; }
+    long long getPrice() const { return finalPrice; }
+    Vehicle* getVehicle() const { return sampleVehiclePtr; }
+    string getStatus() const { return listingStatus; }
+    string getSellerID() const { return sellerProfileID; }
+    
+    bool isTokenPaid() const { return reservationTokenPaid; }
+    long long getTokenAmount() const { return securityTokenAmountHeld; }
+    string getReservingBuyer() const { return reservingBuyerID; }
+
+    // Feature 2: Process simple cash reserve placement
+    void applyTokenReservation(string buyerID, long long depositAmount) {
+        if (listingStatus != "Active") {
+            cout << " -> Error: Listing " << adID << " is not actively available for booking.\n";
+            return;
+        }
+        reservingBuyerID = buyerID;
+        securityTokenAmountHeld = depositAmount;
+        reservationTokenPaid = true;
+        listingStatus = "Reserved"; 
+        cout << " -> [TOKEN REGISTERED] Ad " << adID << " successfully RESERVED by Buyer " << buyerID 
+             << " with deposit payment of PKR " << depositAmount << "\n";
+    }
+
+    void printDetails() const override {
+        cout << "========================================================================\n";
+        cout << "MARKETPLACE LISTING ENTRY REFERENCE ID: " << adID << "\n";
+        cout << " -> Overall Asking Price : PKR " << finalPrice << "\n";
+        cout << " -> System Live Status   : [" << listingStatus << "]\n";
+        cout << " -> Listed By Seller ID  : " << sellerProfileID << "\n";
+        if (reservationTokenPaid) {
+            cout << " -> Booking Guard Details: Reserved By: " << reservingBuyerID << " | Token Held: PKR " << securityTokenAmountHeld << "\n";
+        }
+        cout << "------------------------------------------------------------------------\n";
+        if (sampleVehiclePtr != nullptr) {
+            sampleVehiclePtr->printDetails();
+        } else {
+            cout << " -> Error: No vehicle asset bound to this listing index node.\n";
+        }
+    }
+};
 
 🚗 Car Ads
 ----------
