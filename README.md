@@ -58,7 +58,6 @@ private:
     string listingStatus; // "Pending", "Active", "Reserved", "Sold"
     string sellerProfileID;
     
-    // Feature 2: Booking properties variables
     bool reservationTokenPaid;
     long long securityTokenAmountHeld;
     string reservingBuyerID;
@@ -93,7 +92,6 @@ public:
     long long getTokenAmount() const { return securityTokenAmountHeld; }
     string getReservingBuyer() const { return reservingBuyerID; }
 
-    // Feature 2: Process simple cash reserve placement
     void applyTokenReservation(string buyerID, long long depositAmount) {
         if (listingStatus != "Active") {
             cout << " -> Error: Listing " << adID << " is not actively available for booking.\n";
@@ -270,7 +268,7 @@ public:
         }
     }
 
-    // Feature 2 Action: Buyer deposits token booking money
+    
     void processTokenBooking(AdListing* targetAd, long long tokenAmount) {
         if (tokenAmount > walletCashLimit) {
             cout << " -> Error: You don't have enough balance in your cash wallet to secure this token.\n";
@@ -347,7 +345,6 @@ public:
         : UserAccount(id, name, email, pass), totalApprovalsDone(0), totalFlagsDone(0) {}
 
     void approveListing(AdListing* targetAd) {
-        // Direct assignment access enabled via declared system friend keywords
         targetAd->listingStatus = "Active";
         totalApprovalsDone++;
         cout << "[ADMIN COMPLIANCE] Ad listing " << targetAd->adID << " has been APPROVED and is now live.\n";
@@ -480,7 +477,6 @@ public:
         totalFinancialVolume = volume;
     }
 
-    // Operator Overload: Combines two metric data summaries together
     AppStatistics operator+(const AppStatistics& other) const {
         return AppStatistics(
             totalApprovedAds + other.totalApprovedAds,
