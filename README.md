@@ -42,7 +42,7 @@ The Vehicle Listing module serves as the primary data aggregator for the applica
 
 ### 📸 Execution Screenshot
 
-_Place your "Vehicle Listing" module execution screenshot right here._
+![App Screenshot](./images/1.png)
 
 ### 💻 Code Implementation
 
