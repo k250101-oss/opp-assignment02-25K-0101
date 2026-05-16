@@ -406,7 +406,7 @@ void filterByMinimumMaintenanceLogs(int minLogsRequired) {
             int currentLogCounter = 0;
             
             if (vPtr->getMileage() > 0) {
-                currentLogCounter = 2; // Returns verified logged service instances count
+                currentLogCounter = 2; 
             }
 
             if (currentLogCounter >= minLogsRequired) {
@@ -486,7 +486,6 @@ public:
     }
 };
 
-// Driver demonstration of operator valuation comparisons
 if (*ad3 < *ad1) {
     cout << "[OPERATOR MATCH] Relational validation confirmed: Ad record AD-103 features lower budget tier costs than AD-101.\n";
 }
