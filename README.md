@@ -136,33 +136,6 @@ The Car Ads section specifically handles premium mid-to-large-scale luxury vehic
 _Place your "Car Ads" module execution screenshot right here._
 
 ### 💻 Code Implementation
-
-class Sedan : public Vehicle {
-private:
-    int trunkCapacityLiters;
-    bool hasSunroof;
-public:
-    Sedan(string mk, string md, int yr, int mil, string clr, Engine eng, CarLocation loc, int trunk, bool sunroof)
-        : Vehicle(mk, md, yr, mil, clr, eng, loc), trunkCapacityLiters(trunk), hasSunroof(sunroof) {}
-
-    double calculateTax() const override {
-        double baseTax = 25000.0;
-        if (engineDetails.getCC() > 1500) { baseTax += 20000.0; }
-        if (hasSunroof) { baseTax += 5000.0; }
-        return baseTax;
-    }
-
-    void printDetails() const override {
-        cout << "[VEHICLE TYPE: SEDAN] " << year << " " << make << " " << model << "\n";
-        cout << " -> Color: " << color << " | Total Mileage: " << mileage << " km\n";
-        cout << " -> Location: "; locationDetails.showLocation(); cout << "\n";
-        cout << " -> Engine Specs: "; engineDetails.showSpecs(); cout << "\n";
-        cout << " -> Sedan Features: Trunk Space: " << trunkCapacityLiters << " Liters | Sunroof: " << (hasSunroof ? "Yes" : "No") << "\n";
-        cout << " -> Annual Token Tax Rate: PKR " << calculateTax() << "\n";
-        printMaintenanceHistory();
-    }
-};
-
 ```cpp
 
 class SUV : public Vehicle {
